@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.head {
+  display: flex;
+  justify-content: center;
+  height: 6vh;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  flex-direction: column;
+  height: 94vh;
+  background-color: #eb1212;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5e4848;
+  width: 20vw;
+  height: 35vh;
+  border: 5px solid black;
+  font-size: 6rem;
+}
+.btn {
+  display: flex;
+}
