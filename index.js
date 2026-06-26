@@ -1,4 +1,11 @@
-const Kanji = [
+const Kanji = document.querySelector(".kanji");
+const Next = document.querySelector(".next");
+const Prev = document.querySelector(".prev");
+const FLIP = document.querySelector(".flip");
+const meaning = document.querySelector(".meaning");
+let index = 0;
+
+const card = [
   { kanji: "日", meaning: "Day" },
   { kanji: "月", meaning: "Month" },
   { kanji: "火", meaning: "fire" },
@@ -10,17 +17,21 @@ const Kanji = [
   { kanji: "川", meaning: "river" },
   { kanji: "人", meaning: "person" },
 ];
-let index = 0;
-const Card = document.querySelector(".card");
-const Next = document.querySelector(".next");
-const Prev = document.querySelector(".prev");
-
+FLIP.addEventListener("click", function () {
+  if (meaning.style.display === "flex") {
+    meaning.style.display = "none";
+  } else {
+    meaning.style.display = "flex";
+  }
+});
 Next.addEventListener("click", function () {
   index++;
   if (index > 9) {
     index = 0;
   }
-  Card.textContent = Kanji[index].kanji;
+  meaning.style.display = "none";
+  Kanji.textContent = card[index].kanji;
+  meaning.textContent = card[index].meaning;
 });
 
 Prev.addEventListener("click", function () {
@@ -28,5 +39,7 @@ Prev.addEventListener("click", function () {
   if (index < 0) {
     index = 9;
   }
-  Card.textContent = Kanji[index].kanji;
+  meaning.style.display = "none";
+  Kanji.textContent = card[index].kanji;
+  meaning.textContent = card[index].meaning;
 });
